@@ -7,7 +7,7 @@
   include("includes/nav.php");
   ?>
 <?php 
-	if($_SESSION[login]){
+	if(isset($_SESSION[login])){
 		header('Location: dashboard.php');
 		exit;		
 	}

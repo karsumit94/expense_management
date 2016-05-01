@@ -26,6 +26,7 @@ if(isset($_POST["inputUsername"])){
 ?>
 <?php
 	if(isset($_SESSION[login])){
+		$a=0;
 	  	header('Location: dashboard.php');
 		exit;			
 		}
