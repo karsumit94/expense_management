@@ -13,9 +13,10 @@ if(isset($_POST["inputUsername"])){
 	$username = $_POST["inputUsername"];
 	if($_POST["inputPassword"]== $_POST["inputRPassword"]){
     	$password = md5($_POST["inputPassword"]);
-   		$sql="INSERT INTO user(username, password) VALUES ('$username' ,'$password')";
-		if ($con->query($sql) === TRUE) {
+   		$sql="INSERT INTO `user`(`username`, `password`) VALUES '$username' ,'$password')";
+		if ($con->query($sql) == TRUE) {
     		$_SESSION[login]=$username;
+			header('Location: dashboard.php');
 		} else {
     		$error = " Database Error";
 		}
